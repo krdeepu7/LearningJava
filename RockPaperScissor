@@ -1,1 +1,37 @@
+// A program to play the Game Rock Paper Scissors in Java
+package Chapter4;
 
+import java.util.Scanner;
+
+public class rockPaperScissor {
+
+    public static void main(String[] args) {
+        System.out.println("Enter your input.\n 1. Rock\n 2. Paper\n 3. Scissor");
+        Scanner sc = new Scanner(System.in);
+
+        int choice = sc.nextInt();
+
+        int randomNumber = (int) (Math.random() * 4 - 1) + 1;
+        System.out.println("Your input= " + choice);
+        System.out.println("computer number = " + randomNumber);
+
+        if (choice == randomNumber) {
+            System.out.println("The match is draw");
+        } else if (choice == 1 && randomNumber == 2) {
+            System.out.println("You lose!");
+        } else if (choice == 1 && randomNumber == 3) {
+            System.out.println("You won!");
+        } else if (choice == 2 && randomNumber == 1) {
+            System.out.println("You won!");
+        } else if (choice == 2 && randomNumber == 3) {
+            System.out.println("You lose!");
+        } else if (choice == 3 && randomNumber == 1) {
+            System.out.println("You lose!");
+        } else if (choice == 3 && randomNumber == 2) {
+            System.out.println("You won!");
+        }
+        sc.close();
+
+    }
+
+}
